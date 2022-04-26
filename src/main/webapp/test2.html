@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+
+<!--
+Project name(项目名称)：Element_UI_internal_transition_animation
+  File name(文件名): test2
+  Authors(作者）: mao
+  Author QQ：1296193245
+  GitHub：https://github.com/maomao124/
+  Date(创建日期)： 2022/4/26
+  Time(创建时间)： 19:20
+  Description(描述)： 无
+-->
+
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link rel="stylesheet" href="css/element-ui.css">
+    <script src="js/vue.js"></script>
+    <script src="js/element-ui.js"></script>
+    <style>
+        .transition-box {
+            margin-bottom: 10px;
+            width: 400px;
+            height: 200px;
+            border-radius: 4px;
+            background-color: #409EFF;
+            text-align: center;
+            color: #fff;
+            padding: 40px 20px;
+            box-sizing: border-box;
+            margin-right: 20px;
+        }
+    </style>
+</head>
+<body>
+
+<div id="app">
+    <el-button type="primary" @click="show = !show">点击改变</el-button>
+
+    <div style="display: flex; margin-top: 20px; height: 100px;">
+        <transition name="el-zoom-in-center">
+            <div v-show="show" class="transition-box">.el-zoom-in-center</div>
+        </transition>
+
+        <transition name="el-zoom-in-top">
+            <div v-show="show" class="transition-box">.el-zoom-in-top</div>
+        </transition>
+
+        <transition name="el-zoom-in-bottom">
+            <div v-show="show" class="transition-box">.el-zoom-in-bottom</div>
+        </transition>
+    </div>
+</div>
+
+<script>
+    var app = new Vue({
+        el: "#app",
+        data: {
+            show: false,
+        },
+        methods: {}
+    })
+</script>
+</body>
+</html>
